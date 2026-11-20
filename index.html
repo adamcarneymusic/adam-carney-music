@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adam Carney — Austin-based guitarist, composer, and bandleader. Classical guitar, harp guitar, Brazilian music, tango, and original compositions.">
+  <title>Adam Carney | Guitarist, Composer & Bandleader</title>
+
+  <style>
+    :root {
+      --bg: #151714;
+      --surface: #20231e;
+      --text: #f2eee5;
+      --muted: #aaa99e;
+      --accent: #d8a65d;
+      --line: #3a3d35;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 55px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: normal;
+      font-size: clamp(56px, 7vw, 92px);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin: 22px 0;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero-copy {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-art {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 65% 30%, #bd8950 0%, transparent 34%),
+        radial-gradient(ellipse at 25% 80%, #56604a 0%, transparent 45%),
+        linear-gradient(145deg, #383b30, #1b201b 70%);
+      border: 1px solid #45483d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(242,238,229,.3);
+      border-radius: 50%;
+      width: 290px;
+      height: 470px;
+      transform: rotate(32deg);
+    }
+
+    .hero-art::after {
+      width: 180px;
+      height: 390px;
+      transform: rotate(-32deg);
+    }
+
+    .monogram {
+      font-family: var(--serif);
+      font-size: 150px;
+      color: rgba(242,238,229,.88);
+      z-index: 1;
+      letter-spacing: -15px;
+    }
+
+    .art-caption {
+      position: absolute;
+      bottom: 22px;
+      left: 24px;
+      color: #e9dfce;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 22px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    section { padding: 90px 0; }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: normal;
+      margin: 12px 0 18px;
+    }
+
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 45px;
+    }
+
+    .projects {
+      background: #1b1e19;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 34px;
+      min-height: 245px;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .project h3 {
+      font-family: var(--serif);
+      font-weight: normal;
+      font-size: 30px;
+      margin: 14px 0 8px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 20px;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-mark {
+      min-height: 360px;
+      background:
+        linear-gradient(135deg, transparent 48%, rgba(216,166,93,.18) 49%, transparent 51%),
+        linear-gradient(45deg, transparent 48%, rgba(216,166,93,.15) 49%, transparent 51%),
+        #25291f;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 90px;
+      color: var(--accent);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .credits {
+      border-top: 1px solid var(--line);
+      margin-top: 30px;
+      padding-top: 24px;
+    }
+
+    .credits p {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #22251f;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .contact .intro { margin-left: auto; margin-right: auto; }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { gap: 12px; font-size: 10px; }
+      .hero { grid-template-columns: 1fr; padding: 65px 0; }
+      .hero-art { min-height: 300px; }
+      .monogram { font-size: 115px; }
+      .project-grid, .about-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 35px; }
+      .about-mark { min-height: 230px; }
+      section { padding: 65px 0; }
+      footer .wrap { flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { flex-wrap: wrap; }
+      .project { padding: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="#">Adam Carney</a>
+        <div class="nav-links">
+          <a href="#music">Music</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Guitarist · Composer · Bandleader</div>
+          <h1>Adam<br><span>Carney</span></h1>
+          <p class="hero-copy">
+            Guitarist and composer based in Austin, Texas.
+            Exploring the sounds of Brazil, Argentina, classical
+            music, and beyond — through distinctive instruments,
+            original compositions, and collaborations.
+          </p>
+          <a class="button" href="#projects">Explore the music</a>
+        </div>
+
+        <div class="hero-art" aria-label="Adam Carney monogram artwork">
+          <div class="monogram">AC</div>
+          <div class="art-caption">Austin, Texas · Music without borders</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="projects" id="projects">
+      <div class="wrap">
+        <div class="eyebrow">A world of musical projects</div>
+        <h2 class="section-heading">Different sounds.<br>One musical voice.</h2>
+        <p class="intro">
+          From intimate chamber music to the rhythms of Brazil and
+          the expressive language of tango, these projects explore
+          a wide range of musical traditions and possibilities.
+        </p>
+
+        <div class="project-grid">
+          <a class="project" href="https://violetcrownaffair.com" target="_blank" rel="noopener">
+            <div class="project-number">01 / CHAMBER MUSIC</div>
+            <h3>Violet Crown Affair</h3>
+            <p>
+              An unusual harp guitar and cello duo performing
+              classical music, art and film music, and original compositions.
+            </p>
+            <span class="project-link">Explore the duo ↗</span>
+          </a>
+
+          <a class="project" href="https://horaonce.com" target="_blank" rel="noopener">
+            <div class="project-number">02 / TANGO</div>
+            <h3>Hora Once</h3>
+            <p>
+              Traditional golden-era tango and Nuevo Tango,
+              from intimate ensembles to a full tango group.
+            </p>
+            <span class="project-link">Explore Hora Once ↗</span>
+          </a>
+
+          <a class="project" href="https://carosamigosmusic.com" target="_blank" rel="noopener">
+            <div class="project-number">03 / BRAZILIAN MUSIC</div>
+            <h3>Brazilian Choro</h3>
+            <p>
+              The rich, rhythmic instrumental tradition of Brazil:
+              choro, samba, and the music of generations of Brazilian composers.
+            </p>
+            <span class="project-link">Explore the music ↗</span>
+          </a>
+
+          <div class="project">
+            <div class="project-number">04 / BRAZILIAN MUSIC</div>
+            <h3>Odeon</h3>
+            <p>
+              A Brazilian instrumental trio featuring seven-string guitar,
+              ten-string mandolin, and pandeiro. Based in Austin, Texas.
+            </p>
+            <a class="project-link" href="https://www.instagram.com/odeon.atx/" target="_blank" rel="noopener">Follow Odeon ↗</a>
+          </div>
+
+          <div class="project">
+            <div class="project-number">05 / SOLO</div>
+            <h3>Solo Guitar</h3>
+            <p>
+              Solo performances on seven-string classical guitar
+              and a custom-made fourteen-string harp guitar.
+            </p>
+            <span class="project-link">More music coming soon</span>
+          </div>
+
+          <div class="project">
+            <div class="project-number">06 / COLLABORATIONS</div>
+            <h3>Ensembles & Events</h3>
+            <p>
+              Flexible ensembles for concerts, cultural events,
+              private gatherings, weddings, and special occasions.
+            </p>
+            <span class="project-link">Austin & Central Texas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-mark">AC</div>
+
+        <div class="about-copy">
+          <div class="eyebrow">About Adam</div>
+          <h2 class="section-heading">A life in music.</h2>
+
+          <p>
+            Adam Carney is an Austin-based guitarist, composer,
+            bandleader, and educator. Equally at home in classical
+            music, Brazilian choro, tango, and jazz, he brings a
+            broad musical perspective to both solo performances
+            and collaborative projects.
+          </p>
+
+          <p>
+            He performs on seven-string classical guitar and a
+            custom-built fourteen-string harp guitar — an instrument
+            whose sound combines the character of classical guitar
+            with the resonance of a concert harp.
+          </p>
+
+          <p>
+            Adam works with a versatile community of professional
+            musicians, creating ensembles ranging from solo guitar
+            to larger groups for concerts, cultural events, and
+            private performances throughout Austin and Central Texas.
+          </p>
+
+          <div class="credits">
+            <div class="eyebrow">Selected recordings & credits</div>
+            <p><strong>Gypsy Moon</strong> — Swing Jazz (2007)</p>
+            <p><strong>Elizabeth</strong> — Solo Harp Guitar (2009)</p>
+            <p><strong>Libertango</strong> — Austin Piazzolla Quintet (2011)</p>
+            <p><strong>Hora Once</strong> — Nuevo Tango / Latin Folk (2016)</p>
+            <p>
+              His music has appeared in film, television, video games,
+              documentaries, and international commercials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">Get in touch</div>
+        <h2 class="section-heading">Let's make some music.</h2>
+        <p class="intro">
+          Available for concerts, collaborations, private events,
+          and music instruction in Austin and throughout Central Texas.
+        </p>
+        <a class="button" href="https://adamcarneymusic.com">Contact & more information</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Adam Carney</span>
+      <span>Austin, Texas</span>
+    </div>
+  </footer>
+
+</body>
+</html>
